@@ -1,12 +1,20 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 const AppContext = createContext()
 
 export const AppContextProvider = (props) => {
 
-    const name = 'Naved Ali Khan'
+    
+    const [searchFilter,setSearchFilter]=useState({
+        title:'',
+        location:''
+    })
+
+    const [isSearched,setIsSearched]=useState(false)
+
     const value = {
-        name,
+        searchFilter,setSearchFilter,
+        isSearched,setIsSearched
     }
 
     return (
