@@ -8,9 +8,6 @@ import AppContext from './context/AppContext'
 const App = () => {
   const {name} = useContext( AppContext )
 
-useEffect(()=>{
-   console.log(name)
-},[])
 
   return (
     <>
