@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import AppContext from '../context/AppContext'
-import { assets, JobCategories, JobLocations } from '../assets/assets'
+import { assets, JobCategories, JobLocations, jobsData } from '../assets/assets'
+import JobCart from './JobCart'
 
 const JobListing = () => {
 
@@ -67,11 +68,13 @@ const JobListing = () => {
 
             {/* Job Listings */}
 
-            <section  className='w-full lg:w-3/4 text-gray-800 max-lg:px-4'>
+            <section className='w-full lg:w-3/4 text-gray-800 max-lg:px-4'>
                 <h3 className='font-medium text-3xl py-2' id='job-list'>Latest Jobs</h3>
                 <p className='mb-8'>Get your desired Job from top companies</p>
                 <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4'>
-
+                    {jobsData.map((job,index)=>(
+                        <JobCart key={index} job={job} />
+                    ))}
                 </div>
             </section>
 
