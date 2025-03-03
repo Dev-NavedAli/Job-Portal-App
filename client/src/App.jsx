@@ -14,7 +14,6 @@ useEffect(()=>{
 
   return (
     <>
-      <h1  className='text-center bg-red-500' >Job Portal App</h1>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/apply-job/:id' element={<ApplyJob />} />
